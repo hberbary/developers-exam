@@ -5,7 +5,7 @@
 Este projeto visa instigar o desenvolvedor a demostrar seus conhecimentos. Bem como avaliar o entendimento irá ter sobre projeto. Com isso existem situações que não foram implementadas no projeto, deixando assim a cargo do candidato avaliar.
 
 ### Resumo do projeto
-Este projeto está construído em NetCore na **versão 7.0.102**, com esquema de arquitetura inspirada em **Clean Architecture**, ao qual este conta com 3 sub projetos:
+Este projeto está construído em NetCore na **versão 8.0.205**, com esquema de arquitetura inspirada em **Clean Architecture**, ao qual este conta com 3 sub projetos:
 - Domain
 - Infrastructure
 - Web

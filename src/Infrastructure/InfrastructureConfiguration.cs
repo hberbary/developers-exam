@@ -1,7 +1,6 @@
 using Domain.Interfaces;
 using Infrastructure.Data.Contexts;
 using Infrastructure.Events;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,8 +14,11 @@ public static class InfrastructureConfiguration
     {
         services.AddDbContext<SqlDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("SQLConnection"), b => b.MigrationsAssembly(typeof(SqlDbContext).Assembly.FullName)));
 
-        services.AddMediatR(Assembly.GetExecutingAssembly());
-
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+        });
+        
         services.AddScoped<IDomainEventHandler, DomainEventHandler>();
 
         services.AddScoped<SqlDbContext>();

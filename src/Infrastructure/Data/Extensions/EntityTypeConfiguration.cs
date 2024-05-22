@@ -16,8 +16,6 @@ public abstract class EntityTypeConfiguration<TEntity> : IEntityTypeConfiguratio
 
         builder.Property(p => p.LastUpdatedDate).IsRequired(false).HasColumnName("LastUpdatedDate").HasColumnType("DATETIME");
 
-        builder.Ignore(p => p.CascadeMode);
-
         builder.Ignore(p => p.ClassLevelCascadeMode);
 
         builder.Ignore(p => p.RuleLevelCascadeMode);
