@@ -10,10 +10,10 @@ services:
         ports:
             - "1433:1433"
         volumes:
-            - C:\Users\Public\Docker\Volumes\INSPAND_MSSQL_2017:/var/opt/mssql/data
+            - ~/docker/mssql-inspand/data:/var/opt/mssql/data
         networks:
-            - SAT-DOCKER-NETWORK
+            - INSPAND-DOCKER-NETWORK
         
 networks: 
-    SAT-DOCKER-NETWORK:
+    INSPAND-DOCKER-NETWORK:
         driver: bridge
