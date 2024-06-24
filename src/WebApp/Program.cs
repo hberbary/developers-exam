@@ -1,8 +1,15 @@
 using Infrastructure;
+using Infrastructure.Data.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
+string connString = builder.Configuration.GetConnectionString("SQLConnection");
+
+builder.Services.AddDbContext<SqlDbContext>(options => {
+    options.UseSqlServer(connString);
+});
 
 services.AddControllersWithViews();
 

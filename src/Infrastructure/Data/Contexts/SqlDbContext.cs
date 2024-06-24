@@ -2,12 +2,14 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Domain.Interfaces;
+using Domain.Entities;
 
 namespace Infrastructure.Data.Contexts;
 
 public class SqlDbContext : DbContext
 {
     private readonly IDomainEventHandler _domainEventService;
+    public DbSet<UserEntity> Users { get; set; }
 
     public SqlDbContext(DbContextOptions<SqlDbContext> options, IDomainEventHandler domainEventService) : base(options)
         => _domainEventService = domainEventService;
