@@ -12,7 +12,7 @@ services:
         volumes:
             - C:\Users\Public\Docker\Volumes\INSPAND_MSSQL_2017:/var/opt/mssql/data
         networks:
-            - INSPAND-DOCKER-NETWORK
+            - SAT-DOCKER-NETWORK
         
 networks: 
     SAT-DOCKER-NETWORK:
